@@ -1,0 +1,42 @@
+<html 
+	t:type="layout" 
+	title="portal Index"
+    t:sidebarTitle="Framework Version"
+    xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter">
+    
+	<h1>Records</h1>
+    
+    <table class="table">
+    	<tr>
+    		<th>Nr.</th>
+    		<th>Creator</th>
+    		<th>Created on</th>
+    		<th>Actions</th>
+    	</tr>
+    	<t:loop source="records" value="record">
+    		<tr>
+	    		<td>${record.id}</td>
+	    		<td><t:pagelink page="EditRecord" context="record.id" >${record.id}</t:pagelink></td>
+	    		<td>${record.creator}</td>
+	    		<td>${record.created}</td>
+	    		<td>
+	    			<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+	    			&nbsp;
+	    			<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+	    		</td>
+	    	</tr>
+    	</t:loop>
+    </table>
+    
+    <h1>Create new record</h1>
+	
+	<t:beaneditform t:id="newRecord" object="newRecord" exclude="creator,created" submitlabel="Create Record" />
+	
+	<hr />
+	
+	<t:form role="form" t:id="createdummyrecords" class="form-horizontal">
+		<button type="submit" class="btn btn-default">CREATE DUMMY RECORDS</button>
+	</t:form>
+	
+</html>

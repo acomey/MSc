@@ -1,0 +1,102 @@
+<html 
+	t:type="layout" 
+	title="portal Index"
+    t:sidebarTitle="Framework Version"
+    xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter">
+    
+	<h1>Edit Record</h1>
+	
+	<div class="panel panel-info">
+		<div class="panel-heading">Header</div>
+			<t:zone t:id="headerZone" elementName="div" class="panel-body">
+				<t:form role="form" t:id="editHeader" class="form-horizontal" t:context="record.id" zone="headerZone">
+					<!-- CREATE THREE COLUMS ACCORDING TO TEMPLATE -->
+					<!-- COLUMN 1 -->
+					<div class="col-md-2">
+						<div class="form-group">
+							<label class="control-label" for="modsCollection">
+								<t:checkbox t:id="modsCollection" value="record.modsCollection"></t:checkbox>
+								mods:collection
+							</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="modsRecord">
+								<t:checkbox t:id="modsRecord" value="record.modsRecord"></t:checkbox>
+								mods:record
+							</label>
+						</div>
+					</div>
+					
+					<!-- COLUMN 2 -->
+					<div class="col-md-5">
+						<div class="form-group">
+							<label for="drisUnique" class="control-label col-md-5">Dris Unique:</label>
+							<div class="col-md-7">
+								<t:textfield class="form-control input-sm" t:id="drisUnique" value="record.drisUnique"></t:textfield>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="drisPageNo" class="control-label col-md-5">Dris Page No.:</label>
+							<div class="col-md-7">
+								<t:textfield class="form-control input-sm" t:id="drisPageNo" value="record.drisPageNo"></t:textfield>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="drisDocumentNo" class="control-label col-md-5">Dris Document No.:</label>
+							<div class="col-md-7">
+								<t:textfield class="form-control input-sm" t:id="drisDocumentNo" value="record.drisDocumentNo"></t:textfield>
+							</div>
+						</div>
+					</div>
+				
+					<!-- COLUMN 3 -->
+					<div class="col-md-5">
+						<div class="form-group">
+							<label for="folderNo" class="control-label col-md-5">Folder No.:</label>
+							<div class="col-md-7">
+								<t:textfield class="form-control input-sm" t:id="folderNo" value="record.folderNo"></t:textfield>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ProjectNo" class="control-label col-md-5">Project No.:</label>
+							<div class="col-md-7">
+								<t:textfield class="form-control input-sm" t:id="ProjectNo" value="record.ProjectNo"></t:textfield>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="digitalRootNo" class="control-label col-md-5">Digital Root No.: </label>
+							<div class="col-md-7">
+								<t:textfield class="form-control input-sm" t:id="digitalRootNo" value="record.digitalRootNo"></t:textfield>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="digitalObjectIdentifier" class="control-label col-md-5">DOI:</label>
+							<div class="col-md-7">
+								<t:textfield class="form-control input-sm" t:id="digitalObjectIdentifier" value="record.digitalObjectIdentifier"></t:textfield>
+							</div>
+						</div>
+					</div>
+
+					<button type="submit" class="btn btn-default">Update header</button>
+				</t:form>
+			</t:zone>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">TitleInfo</div>
+				<div class="panel-body">...</div>
+			</div>
+		</div>
+		
+		<div class="col-md-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">TitleInfo</div>
+				<div class="panel-body">...</div>
+			</div>
+		</div>
+	</div>
+	
+</html>

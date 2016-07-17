@@ -1,0 +1,48 @@
+<html 
+	t:type="layout" 
+	title="portal Index"
+    t:sidebarTitle="Framework Version"
+    xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter">
+    
+	<h1>Edit Record</h1>
+	
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Record</a></li>
+		<li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Tab 2</a></li>
+		<li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Tab 3</a></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="tab1">
+			<div class="row">
+				<br />
+				<div class="panel panel-info">
+					<div class="panel-heading">Foo</div>
+					<div class="panel-body">Bar</div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="tab2">
+			<div class="row">
+				<br />
+				<div class="panel panel-info">
+					<div class="panel-heading">Foo</div>
+					<div class="panel-body">Bar</div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="tab3">
+			<div class="row">
+				<br />
+				<div class="panel panel-info">
+					<div class="panel-heading">Foo</div>
+					<div class="panel-body">Bar</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</html>
