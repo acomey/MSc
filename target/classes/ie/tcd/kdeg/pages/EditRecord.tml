@@ -5,98 +5,241 @@
     xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
     xmlns:p="tapestry:parameter">
     
-	<h1>Edit Record</h1>
+    <br />
+    
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Record Metadata</a></li>
+		<li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Title Information</a></li>
+		<li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Name</a></li>
+	</ul>
 	
-	<div class="panel panel-info">
-		<div class="panel-heading">Header</div>
-			<t:zone t:id="headerZone" elementName="div" class="panel-body">
-				<t:form role="form" t:id="editHeader" class="form-horizontal" t:context="record.id" zone="headerZone">
-					<!-- CREATE THREE COLUMS ACCORDING TO TEMPLATE -->
-					<!-- COLUMN 1 -->
-					<div class="col-md-2">
-						<div class="form-group">
-							<label class="control-label" for="modsCollection">
-								<t:checkbox t:id="modsCollection" value="record.modsCollection"></t:checkbox>
-								mods:collection
-							</label>
-						</div>
-						<div class="form-group">
-							<label class="control-label" for="modsRecord">
-								<t:checkbox t:id="modsRecord" value="record.modsRecord"></t:checkbox>
-								mods:record
-							</label>
-						</div>
-					</div>
-					
-					<!-- COLUMN 2 -->
-					<div class="col-md-5">
-						<div class="form-group">
-							<label for="drisUnique" class="control-label col-md-5">Dris Unique:</label>
-							<div class="col-md-7">
-								<t:textfield class="form-control input-sm" t:id="drisUnique" value="record.drisUnique"></t:textfield>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="drisPageNo" class="control-label col-md-5">Dris Page No.:</label>
-							<div class="col-md-7">
-								<t:textfield class="form-control input-sm" t:id="drisPageNo" value="record.drisPageNo"></t:textfield>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="drisDocumentNo" class="control-label col-md-5">Dris Document No.:</label>
-							<div class="col-md-7">
-								<t:textfield class="form-control input-sm" t:id="drisDocumentNo" value="record.drisDocumentNo"></t:textfield>
-							</div>
-						</div>
-					</div>
-				
-					<!-- COLUMN 3 -->
-					<div class="col-md-5">
-						<div class="form-group">
-							<label for="folderNo" class="control-label col-md-5">Folder No.:</label>
-							<div class="col-md-7">
-								<t:textfield class="form-control input-sm" t:id="folderNo" value="record.folderNo"></t:textfield>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="ProjectNo" class="control-label col-md-5">Project No.:</label>
-							<div class="col-md-7">
-								<t:textfield class="form-control input-sm" t:id="ProjectNo" value="record.ProjectNo"></t:textfield>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="digitalRootNo" class="control-label col-md-5">Digital Root No.: </label>
-							<div class="col-md-7">
-								<t:textfield class="form-control input-sm" t:id="digitalRootNo" value="record.digitalRootNo"></t:textfield>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="digitalObjectIdentifier" class="control-label col-md-5">DOI:</label>
-							<div class="col-md-7">
-								<t:textfield class="form-control input-sm" t:id="digitalObjectIdentifier" value="record.digitalObjectIdentifier"></t:textfield>
-							</div>
-						</div>
-					</div>
-
-					<button type="submit" class="btn btn-default">Update header</button>
-				</t:form>
-			</t:zone>
-	</div>
-	
-	<div class="row">
-		<div class="col-md-6">
+	<!-- Tab panes -->
+	<div class="tab-content">
+		
+		<div role="tabpanel" class="tab-pane active" id="tab1">
+			<h1>Record Metadata</h1>
+			
 			<div class="panel panel-info">
-				<div class="panel-heading">TitleInfo</div>
-				<div class="panel-body">...</div>
+				<div class="panel-heading">Header</div>
+					<t:zone t:id="headerZone" t:elementname="div" class="panel-body">
+						<t:form role="form" t:id="editHeader" class="form-horizontal" t:context="record.id" zone="headerZone">
+							<!-- CREATE THREE COLUMS ACCORDING TO TEMPLATE -->
+							<!-- COLUMN 1 -->
+							<div class="col-md-2">
+								<div class="form-group">
+									<label class="control-label" for="modsCollection">
+										<t:checkbox id="modsCollection" t:value="record.modsCollection"></t:checkbox>
+										mods:collection
+									</label>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="modsRecord">
+										<t:checkbox id="modsRecord" t:value="record.modsRecord"></t:checkbox>
+										mods:record
+									</label>
+								</div>
+							</div>
+							
+							<!-- COLUMN 2 -->
+							<div class="col-md-5">
+								<div class="form-group">
+									<label for="drisUnique" class="control-label col-md-5">Dris Unique:</label>
+									<div class="col-md-7">
+										<t:textfield class="form-control input-sm" id="drisUnique" t:value="record.drisUnique"></t:textfield>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="drisPageNo" class="control-label col-md-5">Dris Page No.:</label>
+									<div class="col-md-7">
+										<t:textfield class="form-control input-sm" id="drisPageNo" t:value="record.drisPageNo"></t:textfield>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="drisDocumentNo" class="control-label col-md-5">Dris Document No.:</label>
+									<div class="col-md-7">
+										<t:textfield class="form-control input-sm" id="drisDocumentNo" t:value="record.drisDocumentNo"></t:textfield>
+									</div>
+								</div>
+							</div>
+						
+							<!-- COLUMN 3 -->
+							<div class="col-md-5">
+								<div class="form-group">
+									<label for="folderNo" class="control-label col-md-5">Folder No.:</label>
+									<div class="col-md-7">
+										<t:textfield class="form-control input-sm" id="folderNo" t:value="record.folderNo"></t:textfield>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="ProjectNo" class="control-label col-md-5">Project No.:</label>
+									<div class="col-md-7">
+										<t:textfield class="form-control input-sm" id="ProjectNo" t:value="record.ProjectNo"></t:textfield>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="digitalRootNo" class="control-label col-md-5">Digital Root No.: </label>
+									<div class="col-md-7">
+										<t:textfield class="form-control input-sm" id="digitalRootNo" t:value="record.digitalRootNo"></t:textfield>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="digitalObjectIdentifier" class="control-label col-md-5">DOI:</label>
+									<div class="col-md-7">
+										<t:textfield class="form-control input-sm" id="digitalObjectIdentifier" t:value="record.digitalObjectIdentifier"></t:textfield>
+									</div>
+								</div>
+							</div>
+		
+							<button type="submit" class="btn btn-default">Update header</button>
+						</t:form>
+					</t:zone>
 			</div>
 		</div>
 		
-		<div class="col-md-6">
-			<div class="panel panel-info">
-				<div class="panel-heading">TitleInfo</div>
-				<div class="panel-body">...</div>
-			</div>
+		<div role="tabpanel" class="tab-pane" id="tab2">
+			<h1>Title Information</h1>
+			
+			<t:zone t:id="titleInfoZone" t:elementName="div">
+				<t:if test="record.titleInfos" negate="true">
+					<div class="alert alert-danger" role="alert">
+						<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						You need at least one title information! Create one below.
+					</div>
+				</t:if>
+				
+				<t:loop source="record.titleInfos" t:value="titleInfo">
+					<div class="panel panel-info">
+						<div class="panel-heading">Header</div>
+						<t:zone t:id="updateTitleInfoZone" t:elementname="div" class="panel-body">
+							<t:form t:id="updateTitleInfo" t:object="titleInfo" t:context="titleInfo.id" t:include="title" class="form-horizontal" zone="^">
+								<t:errors/>
+								
+								<div class="form-group">
+									<label for="ti_type" class="control-label col-md-2">Type:</label>
+									<div class="col-md-6">
+										<t:select class="form-control input-sm" id="ti_type" t:model="literal:abbreviated,translated,alternative,uniform" t:value="titleInfo.type" />
+									</div>
+								</div>
+											
+								<t:zone t:id="displayLabelZone">		
+									<div class="form-group">
+										<label for="ti_displaylabel" class="control-label col-md-2">Display Label:</label>
+										<div class="col-md-6">
+											<t:textfield class="form-control input-sm" id="ti_displaylabel" t:value="titleInfo.displaylabel"></t:textfield>
+										</div>
+										
+										<t:if test="remainingdisplayattributes">
+											<div class="dropdown col-md-4">
+												<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+													Add
+													<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+													<t:if test="!titleInfo.displaylabellang">
+														<li><t:actionlink t:id="adddisplaylabellang" context="titleInfo.id" t:zone="^">lang</t:actionlink></li>
+													</t:if>
+													<t:if test="!titleInfo.displaylabelxmllang">
+														<li><t:actionlink t:id="adddisplaylabelxmllang" context="titleInfo.id" t:zone="^">xmllang</t:actionlink></li>
+													</t:if>
+													<t:if test="!titleInfo.displaylabelscript">
+														<li><t:actionlink t:id="adddisplaylabelscript" context="titleInfo.id" t:zone="^">script</t:actionlink></li>
+													</t:if>
+													<t:if test="!titleInfo.displaylabeltranslation">
+														<li><t:actionlink t:id="adddisplaylabeltranslation" context="titleInfo.id" t:zone="^">translation</t:actionlink></li>
+													</t:if>
+												</ul>
+											</div>
+										</t:if>
+									</div>
+									
+									<t:if test="titleInfo.displaylabellang">
+										<div class="form-group">
+											<label for="ti_displaylabel_lang" class="control-label col-md-2 col-md-offset-1">Lang:</label>
+											<div class="col-md-5">
+												<t:textfield class="form-control input-sm" id="ti_displaylabel_lang" t:value="titleInfo.displaylabellang"></t:textfield>
+											</div>
+										</div>
+									</t:if>
+									
+									<t:if test="titleInfo.displaylabelxmllang">
+										<div class="form-group">
+											<label for="ti_displaylabel_xmllang" class="control-label col-md-2 col-md-offset-1">XML Lang:</label>
+											<div class="col-md-5">
+												<t:textfield class="form-control input-sm" id="ti_displaylabel_xmllang" t:value="titleInfo.displaylabelxmllang"></t:textfield>
+											</div>
+										</div>
+									</t:if>
+									
+									<t:if test="titleInfo.displaylabelscript">
+										<div class="form-group">
+											<label for="ti_displaylabel_script" class="control-label col-md-2 col-md-offset-1">Script:</label>
+											<div class="col-md-5">
+												<t:textfield class="form-control input-sm" id="ti_displaylabel_script" t:value="titleInfo.displaylabelscript"></t:textfield>
+											</div>
+										</div>
+									</t:if>
+									
+									<t:if test="titleInfo.displaylabeltranslation">
+										<div class="form-group">
+											<label for="ti_displaylabel_translation" class="control-label col-md-2 col-md-offset-1">Translation:</label>
+											<div class="col-md-5">
+												<t:textfield class="form-control input-sm" id="ti_displaylabel_translation" t:value="titleInfo.displaylabeltranslation"></t:textfield>
+											</div>
+										</div>
+									</t:if>
+								</t:zone>
+								
+								<div class="form-group">
+									<label for="ti_nonsort" class="control-label col-md-2">Non Sort:</label>
+									<div class="col-md-6">
+										<t:textfield class="form-control input-sm" id="ti_nonsort" t:value="titleInfo.nonsort"></t:textfield>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="ti_title" class="control-label col-md-2">Title:</label>
+									<div class="col-md-6">
+										<t:textfield class="form-control input-sm" id="ti_title" t:value="titleInfo.title"></t:textfield>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="ti_subtitle" class="control-label col-md-2">Subtitle:</label>
+									<div class="col-md-6">
+										<t:textfield class="form-control input-sm" id="ti_subtitle" t:value="titleInfo.subtitle"></t:textfield>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="ti_partnumber" class="control-label col-md-2">Part Number:</label>
+									<div class="col-md-6">
+										<t:textfield class="form-control input-sm" id="ti_partnumber" t:value="titleInfo.partnumber"></t:textfield>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="ti_partname" class="control-label col-md-2">Part Name:</label>
+									<div class="col-md-6">
+										<t:textfield class="form-control input-sm" id="ti_partname" t:value="titleInfo.partname"></t:textfield>
+									</div>
+								</div>
+								
+								<input t:type="submit" class="btn btn-default" t:value="Save"/>
+							</t:form>
+						</t:zone>
+					</div>
+		    	</t:loop>
+	    	</t:zone>
+	    	
+	    	<h1>Create New Title Information</h1>
+	    	
+	    	<t:beaneditform t:id="createTitleInfo" t:object="newTitleInfo" t:include="title" t:submitlabel="Create Title Information" zone="titleInfoZone" />
+	    	
 		</div>
+		
+		<div role="tabpanel" class="tab-pane" id="tab3">
+		</div>
+		
 	</div>
-	
 </html>

@@ -56,6 +56,7 @@ public class AppModule {
 		// you can extend this list of locales (it's a comma separated series of locale names;
 		// the first locale name is the default when there's no reasonable match).
 		configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en");
+		configuration.add(SymbolConstants.PRODUCTION_MODE, false);
 
 		// Tynamo's tapestry-security module configuration
 		configuration.add(SecuritySymbols.LOGIN_URL, "/login");

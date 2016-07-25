@@ -1,6 +1,11 @@
 package ie.tcd.kdeg.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import org.apache.tapestry5.beaneditor.Validate;
 
@@ -31,6 +36,9 @@ public class Record extends BaseEntity {
 	
 	@Validate("required")
 	private String digitalObjectIdentifier;
+	
+	@OneToMany(mappedBy = "record", cascade = CascadeType.ALL)
+	private List<TitleInfo> titleInfos = new ArrayList<TitleInfo>();
 
 	public boolean isModsCollection() {
 		return isModsCollection;
@@ -103,6 +111,13 @@ public class Record extends BaseEntity {
 	public void setDigitalObjectIdentifier(String digitalObjectIdentifier) {
 		this.digitalObjectIdentifier = digitalObjectIdentifier;
 	}
-	
 
+	public List<TitleInfo> getTitleInfos() {
+		return titleInfos;
+	}
+
+	public void setTitleInfos(List<TitleInfo> titleInfos) {
+		this.titleInfos = titleInfos;
+	}
+	
 }
