@@ -64,11 +64,18 @@ public class EditRecord extends BasePage {
     }
 
 	@CommitAfter
-	public Object onSuccessFromUpdateTitleInfo() {
-		if(titleInfo.hasDisplayLabelAttributes() && titleInfo.getDisplayLabel() == null)
-			titleInfo.removeDisplayAttributes();
-		
+	public void onSuccessFromUpdateTitleInfo() {
 		session.update(titleInfo);
+		updateTitleInfo.clearErrors();
+	}
+		
+	public void onValidateFromTI_DisplayLabel(String value) {
+		if(titleInfo.hasDisplayLabelAttributes() && (value == null || "".equals(value))) {
+			updateTitleInfo.recordError("Display Label cannot be empty and have attributes.");
+		}
+	}
+	
+	public Object onSubmitFromUpdateTitleInfo() {
 		return updateTitleInfoZone.getBody();
 	}
 	
@@ -80,11 +87,11 @@ public class EditRecord extends BasePage {
 		titleInfo = (TitleInfo) session.get(TitleInfo.class, id);
 		
 		if("lang".equals(attribute)) {
-			titleInfo.setDisplayLabelLang(attribute);
+			titleInfo.setDisplayLabelLang("eng");
 		} else if ("xmllang".equals(attribute)) {
-			titleInfo.setDisplayLabelXmlLang(attribute);
+			titleInfo.setDisplayLabelXmlLang("en");
 		} else if ("script".equals(attribute)) {
-			titleInfo.setDisplayLabelScript(attribute);
+			titleInfo.setDisplayLabelScript("arab");
 		} else if ("translation".equals(attribute)) {
 			titleInfo.setDisplayLabelTranslation(attribute);
 		}

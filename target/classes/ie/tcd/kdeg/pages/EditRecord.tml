@@ -125,15 +125,14 @@
 								<t:zone t:id="displayLabelZone">		
 									<div class="form-group">
 										<label for="ti_displaylabel" class="control-label col-md-2">Display Label:</label>
-										<div class="col-md-6">
-											<t:textfield class="form-control input-sm" id="ti_displaylabel" t:value="titleInfo.displaylabel"></t:textfield>
+										<div class="col-md-8">
+											<t:textfield class="form-control input-sm" t:id="ti_displaylabel" t:value="titleInfo.displaylabel"></t:textfield>
 										</div>
 										
 										<t:if test="remainingdisplayattributes">
-											<div class="dropdown col-md-4">
-												<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-													Add
-													<span class="caret"></span>
+											<div class="dropdown col-md-2">
+												<button class="btn btn-default dropdown-toggle btn-sm" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+													Add <span class="caret"></span>
 												</button>
 												<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 													<t:if test="!titleInfo.displaylabellang">
@@ -153,74 +152,79 @@
 										</t:if>
 									</div>
 									
-									<t:if test="titleInfo.displaylabellang">
-										<div class="form-group">
-											<label for="ti_displaylabel_lang" class="control-label col-md-2 col-md-offset-1">Lang:</label>
-											<div class="col-md-5">
-												<t:textfield class="form-control input-sm" id="ti_displaylabel_lang" t:value="titleInfo.displaylabellang"></t:textfield>
+									<div class="row col-md-8 col-md-offset-2">
+										<t:if test="titleInfo.displaylabellang">
+											<div class="form-group">
+												<label for="ti_displaylabel_lang" class="control-label col-md-2">Lang:</label>
+												<div class="col-md-10">
+													<t:select class="form-control input-sm" id="ti_displaylabel_lang" t:model="literal:eng,fre,ger,gle,ita,lat,spa" t:value="titleInfo.displaylabellang" />
+												</div>
 											</div>
-										</div>
-									</t:if>
-									
-									<t:if test="titleInfo.displaylabelxmllang">
-										<div class="form-group">
-											<label for="ti_displaylabel_xmllang" class="control-label col-md-2 col-md-offset-1">XML Lang:</label>
-											<div class="col-md-5">
-												<t:textfield class="form-control input-sm" id="ti_displaylabel_xmllang" t:value="titleInfo.displaylabelxmllang"></t:textfield>
+										</t:if>
+										
+										<t:if test="titleInfo.displaylabelxmllang">
+											<div class="form-group">
+												<label for="ti_displaylabel_xmllang" class="control-label col-md-2">XML Lang:</label>
+												<div class="col-md-10">
+													<t:select class="form-control input-sm" id="ti_displaylabel_xmllang" t:model="literal:en,fr,de,ga,it,la,es" t:value="titleInfo.displaylabelxmllang" />
+												</div>
 											</div>
-										</div>
-									</t:if>
-									
-									<t:if test="titleInfo.displaylabelscript">
-										<div class="form-group">
-											<label for="ti_displaylabel_script" class="control-label col-md-2 col-md-offset-1">Script:</label>
-											<div class="col-md-5">
-												<t:textfield class="form-control input-sm" id="ti_displaylabel_script" t:value="titleInfo.displaylabelscript"></t:textfield>
+										</t:if>
+										
+										<t:if test="titleInfo.displaylabelscript">
+											<div class="form-group">
+												<label for="ti_displaylabel_script" class="control-label col-md-2">Script:</label>
+												<div class="col-md-10">
+													<t:select class="form-control input-sm" id="ti_displaylabel_script" t:model="literal:arab,brai,cyrl,goth,grek,hebr,jpan,latg,latn" t:value="titleInfo.displaylabelscript" />
+												</div>
 											</div>
-										</div>
-									</t:if>
-									
-									<t:if test="titleInfo.displaylabeltranslation">
-										<div class="form-group">
-											<label for="ti_displaylabel_translation" class="control-label col-md-2 col-md-offset-1">Translation:</label>
-											<div class="col-md-5">
-												<t:textfield class="form-control input-sm" id="ti_displaylabel_translation" t:value="titleInfo.displaylabeltranslation"></t:textfield>
+										</t:if>
+										
+										<t:if test="titleInfo.displaylabeltranslation">
+											<div class="form-group">
+												<label for="ti_displaylabel_translation" class="control-label col-md-2">Translation:</label>
+												<div class="col-md-10">
+													<t:textfield class="form-control input-sm" id="ti_displaylabel_translation" t:value="titleInfo.displaylabeltranslation"></t:textfield>
+												</div>
 											</div>
-										</div>
-									</t:if>
+										</t:if>
+								</div>
+								<div class="col-md-2 col-md-offset-10" />
+
 								</t:zone>
+								
 								
 								<div class="form-group">
 									<label for="ti_nonsort" class="control-label col-md-2">Non Sort:</label>
-									<div class="col-md-6">
+									<div class="col-md-8">
 										<t:textfield class="form-control input-sm" id="ti_nonsort" t:value="titleInfo.nonsort"></t:textfield>
 									</div>
 								</div>
 								
 								<div class="form-group">
 									<label for="ti_title" class="control-label col-md-2">Title:</label>
-									<div class="col-md-6">
+									<div class="col-md-8">
 										<t:textfield class="form-control input-sm" id="ti_title" t:value="titleInfo.title"></t:textfield>
 									</div>
 								</div>
 								
 								<div class="form-group">
 									<label for="ti_subtitle" class="control-label col-md-2">Subtitle:</label>
-									<div class="col-md-6">
+									<div class="col-md-8">
 										<t:textfield class="form-control input-sm" id="ti_subtitle" t:value="titleInfo.subtitle"></t:textfield>
 									</div>
 								</div>
 								
 								<div class="form-group">
 									<label for="ti_partnumber" class="control-label col-md-2">Part Number:</label>
-									<div class="col-md-6">
+									<div class="col-md-8">
 										<t:textfield class="form-control input-sm" id="ti_partnumber" t:value="titleInfo.partnumber"></t:textfield>
 									</div>
 								</div>
 								
 								<div class="form-group">
 									<label for="ti_partname" class="control-label col-md-2">Part Name:</label>
-									<div class="col-md-6">
+									<div class="col-md-8">
 										<t:textfield class="form-control input-sm" id="ti_partname" t:value="titleInfo.partname"></t:textfield>
 									</div>
 								</div>
