@@ -29,3 +29,27 @@ dl.t-beandisplay dt {
 	text-align: left;
 	width: 25%;
 }
+
+
+.btnRight {
+	text-align: left ;
+}
+
+.btnTiType {
+	text-align: left ;
+}
+
+
+.addelements {
+	outline: #000 dashed thin;
+	padding: 10px 10px 10px 10px;
+	margin-bottom: 10px;
+}
+
+
+
+.caret.full {
+  position: absolute;
+  right: 1%;
+  top: 45%;
+}
